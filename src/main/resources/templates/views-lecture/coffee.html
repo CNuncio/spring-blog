@@ -6,11 +6,21 @@
 </head>
 <body>
 <h1>Welcome to my coffee page!</h1>
-<h2 th:if="${roast}">
-    <p>You selected <span th:text="${roast}"></span> roast!</p>
-</h2>
-<p th:if="${roast} == 'iced'">You chose correctly!</p>
-<p th:if="${roast} != 'iced'">You chose incorrectly!</p>
+
+<!--<h2 th:if="${roast}">-->
+
+<div th:if="${selections}">
+<!--    <p>You selected <span th:text="${roast}"></span> roast!</p>-->
+    <h2>You selected <span th:text="${roast}"></span> roast!</h2>
+    <p>Here are some options for you:</p>
+    <ul>
+        <li th:each="selection : ${selections}"><p><span th:text="${selection.brand}"></span> <span th:text="${selection.origin}"></span> <span th:text="${selection.roast}"></span> roast</p></li>
+    </ul>
+</div>
+
+<!--</h2>-->
+<!--<p th:if="${roast} == 'iced'">You chose correctly!</p>-->
+<!--<p th:if="${roast} != 'iced'">You chose incorrectly!</p>-->
 <!--<p th:if="${choseICED}">You chose correctly!</p>-->
 <!--<p th:if="${choseICED}">You chose incorrectly!</p>-->
 <!--when using boolean if statement in controller-->
