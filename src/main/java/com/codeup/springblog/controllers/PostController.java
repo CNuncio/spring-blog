@@ -17,19 +17,19 @@ public class PostController {
 
     @GetMapping("/posts/{id}")
     @ResponseBody
-    public String getAds(@PathVariable long id) {
+    public String getAdId(@PathVariable long id) {
         return "ad for id" + id;
     }
 
     @GetMapping("/posts/create")
     @ResponseBody
     public String viewPost(@PathVariable long id) {
-        return "<input type=\"input\" name=\"post\"/>";
+        return "Here is the post create form.";
     }
 
-//    @PostMapping("/posts/create")
-//    @ResponseBody
-//    public String createPost() {
-//        return
-//    }
+    @PostMapping("/posts/create")
+    @ResponseBody
+    public String createPost() {
+        return "New post saved...";
+    }
 }
