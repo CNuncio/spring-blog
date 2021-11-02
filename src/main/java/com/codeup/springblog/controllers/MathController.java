@@ -42,6 +42,12 @@ public class MathController {
         return num1 * num2;
     }
 
+//    @GetMapping("/multiply/{num1}/and/{num2}")
+//    @ResponseBody
+//    public String multiply(@PathVariable int num1, @PathVariable int num2) {
+//        return String.valueOf(num1 * num2);
+//    }
+
     @GetMapping("/squared/{num1}/and/{num2}")
     @ResponseBody
     public int square(@PathVariable int num1, @PathVariable int num2) {
