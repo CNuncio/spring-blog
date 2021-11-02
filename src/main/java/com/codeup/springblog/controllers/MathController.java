@@ -54,6 +54,13 @@ public class MathController {
         return num1 ^ num2;
     }
 
+//    @GetMapping("/squared/{num1}/and/{num2}")
+//    @ResponseBody
+//    public String square(@PathVariable int num1, @PathVariable int num2) {
+//        return String.valueOf(num1 ^ num2);
+//    }
+
+
     @GetMapping("/divide/{num1}/and/{num2}")
     @ResponseBody
     public double divide(@PathVariable int num1, @PathVariable int num2) {
