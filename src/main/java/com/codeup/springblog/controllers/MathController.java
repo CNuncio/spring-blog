@@ -70,4 +70,14 @@ public class MathController {
         return (double) num1 / (double) num2;
     }
 
+//    @GetMapping("/divide/{num1}/and/{num2}")
+//    @ResponseBody
+//    public String divide(@PathVariable int num1, @PathVariable int num2) {
+//        if (num2 == 0) {
+//            throw new ArithmeticException("Can't divide by 0");
+//        }
+//        return  String.valueOf(num1 / num2);
+//    }
+
+
 }
