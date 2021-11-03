@@ -23,17 +23,17 @@ public class MathController {
 //    }
 
 
-    @GetMapping("/subtract/{num1}/from/{num2}")
-    @ResponseBody
-    public int subtract(@PathVariable int num1, @PathVariable int num2) {
-        return num1 - num2;
-    }
-
 //    @GetMapping("/subtract/{num1}/from/{num2}")
 //    @ResponseBody
-//    public String subtract(@PathVariable int num1, @PathVariable int num2) {
-//        return String.valueOf(num1 - num2);
+//    public int subtract(@PathVariable int num1, @PathVariable int num2) {
+//        return num1 - num2;
 //    }
+
+    @GetMapping("/subtract/{num1}/from/{num2}")
+    @ResponseBody
+    public String subtract(@PathVariable int num1, @PathVariable int num2) {
+        return String.valueOf(num1 - num2);
+    }
 
 
 //    @GetMapping("/multiply/{num1}/and/{num2}")
