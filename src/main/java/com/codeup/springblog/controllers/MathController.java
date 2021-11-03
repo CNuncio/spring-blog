@@ -10,17 +10,17 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MathController {
 
-    @GetMapping("/add/{num1}/and/{num2}")
-    @ResponseBody
-    public int addition(@PathVariable int num1, @PathVariable int num2) {
-        return num1 + num2;
-    }
-
 //    @GetMapping("/add/{num1}/and/{num2}")
 //    @ResponseBody
-//    public String addition(@PathVariable int num1, @PathVariable int num2) {
-//        return String.valueOf(num1 + num2);
+//    public int addition(@PathVariable int num1, @PathVariable int num2) {
+//        return num1 + num2;
 //    }
+
+    @GetMapping("/add/{num1}/and/{num2}")
+    @ResponseBody
+    public String addition(@PathVariable int num1, @PathVariable int num2) {
+        return String.valueOf(num1 + num2);
+    }
 
 
 //    @GetMapping("/subtract/{num1}/from/{num2}")
