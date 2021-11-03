@@ -9,14 +9,14 @@
 
 <!--<h2 th:if="${roast}">-->
 
-<div th:if="${selections}">
 <!--    <p>You selected <span th:text="${roast}"></span> roast!</p>-->
-    <h2>You selected <span th:text="${roast}"></span> roast!</h2>
-    <p>Here are some options for you:</p>
-    <ul>
-        <li th:each="selection : ${selections}"><p><span th:text="${selection.brand}"></span> <span th:text="${selection.origin}"></span> <span th:text="${selection.roast}"></span> roast</p></li>
-    </ul>
-</div>
+    <div th:if="${selections}">
+        <h2>You selected <span th:text="${roast}"></span> roast!</h2>
+        <p>Here are some options for you:</p>
+        <ul>
+            <li th:each="selection : ${selections}"><p><span th:text="${selection.brand}"></span> <span th:text="${selection.origin}"></span> <span th:text="${selection.roast}"></span> roast</p></li>
+        </ul>
+    </div>
 
 <!--</h2>-->
 <!--<p th:if="${roast} == 'iced'">You chose correctly!</p>-->

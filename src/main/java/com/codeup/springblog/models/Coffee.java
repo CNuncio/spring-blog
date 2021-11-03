@@ -2,6 +2,7 @@ package com.codeup.springblog.models;
 
 public class Coffee {
     private String roast;
+//    private String origin;
     private String origin;
     private String brand;
 
@@ -37,5 +38,15 @@ public class Coffee {
         this.origin = origin;
     }
 }
+
+
+//    public String getOrigin() {
+//        return origin;
+//    }
+//
+//    public void setOrigin(String origin) {
+//        this.origin = origin;
+//    }
+
 
 
