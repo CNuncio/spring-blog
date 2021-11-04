@@ -5,29 +5,37 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 @Controller
 public class RollDiceController {
 
     @GetMapping("/roll-dice")
     @ResponseBody
-    public String rollDice() {
+    public String showRollDice() {
 
-        return "Please eneter a number.";
+        return "roll-dice";
     }
 
-    @GetMapping("/roll-dice{n}")
+    @GetMapping("/roll-dice/{n}")
     @ResponseBody
-    public int rollDice(@PathVariable int n) {
-
-        return n;
+    public String rollDice(@PathVariable int n, Model model) {
+        String message;
+        int randomNum1 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        int randomNum2 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        int randomNum3 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        int randomNum4 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        if (n == randomNum1 || n == randomNum2 || n == randomNum3 || n == randomNum4) {
+            message = "You guessed right!";
+        } else {
+            message = "Sorry. Guess again.";
+        }
+        model.addAttribute("randomNum1", randomNum1);
+        model.addAttribute("randomNum2", randomNum2);
+        model.addAttribute("randomNum3", randomNum3);
+        model.addAttribute("randomNum4", randomNum4);
+        model.addAttribute("n", n);
+        model.addAttribute("message", message);
     }
-
+ return "roll-results";
 }
-//<ul>
-//<li><a href="/roll-dice/1">1</a></li>
-//<li><a href="/roll-dice/2">2</a></li>
-//<li><a href="/roll-dice/3">3</a></li>
-//<li><a href="/roll-dice/4">4</a></li>
-//<li><a href="/roll-dice/5">5</a></li>
-//<li><a href="/roll-dice/6">6</a></li>
-//</ul>
