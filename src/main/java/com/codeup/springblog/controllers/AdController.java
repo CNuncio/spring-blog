@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AdController {
 
+    private final AdRepository adRepository;
+
+    public AdController(AdRepository adRepository) {
+        this.adRepository = adRepository;
+    }
+
     @GetMapping("/ads")
     @ResponseBody
     public String showAds() {

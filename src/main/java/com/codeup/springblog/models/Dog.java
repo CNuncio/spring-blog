@@ -1,17 +1,19 @@
-package com.codeup.springblog.controllers;
+package com.codeup.springblog.models;
 
 import javax.persistence.*;
 
 @Entity
-public class DoggoController {
+@Table(name = "dogs")
+public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "INT (11) UNSIGNED NOT NULL")
     private long id;
-    @Column(columnDefinition = "tinyint(3) unsigned", nullable = false, unique = true);
+    @Column(columnDefinition = "tinyint(3) unsigned not null", unique = true)
     private int age;
-    @Column(columnDefinition = "varchar(200)", nullable = false);
+    @Column(columnDefinition = "varchar(200)", nullable = false)
     private String name;
-    @Column(columnDefinition = "char(2) DEFAULT 'XX'");
+    @Column(columnDefinition = "char(2) DEFAULT 'XX'")
     private String resideState;
 
     public long getId() {
