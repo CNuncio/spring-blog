@@ -1,4 +1,4 @@
 package com.codeup.springblog.controllers;
 
-public class EmailService {
+public class UserController {
 }
